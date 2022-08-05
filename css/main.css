@@ -75,7 +75,7 @@ body section.hero .hero__right .hero__image--imgDark {
 
 body.dark-theme {
   --bgColor: #00121f;
-  --navColor: #DDF1FF;
+  --navColor: #9ed6ff;
   --primaryColor: #81CAFF;
   --primaryColorDark: #1ca0ff;
   --titleColor: white;
@@ -105,6 +105,12 @@ body.dark-theme section.hero .hero__right .hero__image--imgLight {
 }
 body.dark-theme section.hero .hero__right .hero__image--imgDark {
   display: unset;
+}
+body.dark-theme section.help .help__cards .help__adopt .help__iconDark, body.dark-theme section.help .help__cards .help__donate .help__iconDark {
+  display: unset;
+}
+body.dark-theme section.help .help__cards .help__adopt .help__iconLight, body.dark-theme section.help .help__cards .help__donate .help__iconLight {
+  display: none;
 }
 
 html::-webkit-scrollbar {
@@ -299,10 +305,86 @@ section.hero .hero__right .hero__image--img {
   margin-inline: auto;
 }
 
+section.help {
+  margin-top: 10rem;
+}
+section.help .help__header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+section.help .help__header span {
+  color: var(--primaryColor);
+}
+section.help .help__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+section.help .help__cards .help__adopt .help__adopt--header, section.help .help__cards .help__adopt .help__donate--header, section.help .help__cards .help__donate .help__adopt--header, section.help .help__cards .help__donate .help__donate--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+section.help .help__cards .help__adopt .help__adopt--header span::after, section.help .help__cards .help__donate .help__adopt--header span::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primaryColor);
+  width: 60px;
+  height: 10px;
+  top: 0.95rem;
+  left: 0;
+  z-index: -1;
+}
+section.help .help__cards .help__adopt .help__donate--header span::after, section.help .help__cards .help__donate .help__donate--header span::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primaryColor);
+  width: 70px;
+  height: 10px;
+  top: 0.95rem;
+  left: 0;
+  z-index: -1;
+}
+section.help .help__cards .help__adopt .help__adopt--desc, section.help .help__cards .help__adopt .help__donate--desc, section.help .help__cards .help__donate .help__adopt--desc, section.help .help__cards .help__donate .help__donate--desc {
+  width: 50%;
+  font-size: 0.813rem;
+  color: var(--textColor);
+  margin-bottom: 1.25rem;
+}
+section.help .help__cards .help__adopt .help__adopt--buttons, section.help .help__cards .help__adopt .help__donate--buttons, section.help .help__cards .help__donate .help__adopt--buttons, section.help .help__cards .help__donate .help__donate--buttons {
+  display: flex;
+}
+section.help .help__cards .help__adopt .help__adopt--buttons .help__iconDark, section.help .help__cards .help__adopt .help__donate--buttons .help__iconDark, section.help .help__cards .help__donate .help__adopt--buttons .help__iconDark, section.help .help__cards .help__donate .help__donate--buttons .help__iconDark {
+  display: none;
+  margin-right: 1.5rem;
+}
+section.help .help__cards .help__adopt .help__adopt--buttons .help__iconLight, section.help .help__cards .help__adopt .help__donate--buttons .help__iconLight, section.help .help__cards .help__donate .help__adopt--buttons .help__iconLight, section.help .help__cards .help__donate .help__donate--buttons .help__iconLight {
+  width: 3.125rem;
+  height: auto;
+  margin-right: 1.5rem;
+}
+section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary a {
+  color: white;
+}
+
 @media screen and (max-width: 330px) {
   section.hero .hero__left .hero__header span::after {
     top: 9rem;
     left: 0;
+  }
+  section.help .help__cards .help__adopt .help__adopt--desc, section.help .help__cards .help__adopt .help__donate--desc, section.help .help__cards .help__donate .help__adopt--desc, section.help .help__cards .help__donate .help__donate--desc {
+    width: 90%;
+  }
+  section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary a {
+    font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 331px) and (max-width: 356px) {
@@ -321,6 +403,19 @@ section.hero .hero__right .hero__image--img {
     max-width: 100%;
     max-height: 420px;
   }
+  section.help .help__cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 800px) {
+  section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
+    width: 40%;
+  }
 }
 @media screen and (min-width: 895px) {
   section.hero .hero__left .hero__header {
@@ -337,8 +432,25 @@ section.hero .hero__right .hero__image--img {
     font-size: 1.5rem;
     width: 100%;
   }
+  section.help .help__header {
+    font-size: 3rem;
+  }
+  section.help .help__cards .help__adopt .help__adopt--header, section.help .help__cards .help__adopt .help__donate--header, section.help .help__cards .help__donate .help__adopt--header, section.help .help__cards .help__donate .help__donate--header {
+    font-size: 1.75rem;
+  }
+  section.help .help__cards .help__adopt .help__adopt--header span::after, section.help .help__cards .help__adopt .help__donate--header span::after, section.help .help__cards .help__donate .help__adopt--header span::after, section.help .help__cards .help__donate .help__donate--header span::after {
+    top: 1.5rem;
+    width: 85px;
+  }
+  section.help .help__cards .help__adopt .help__donate--header span::after, section.help .help__cards .help__donate .help__donate--header span::after {
+    width: 100px;
+  }
+  section.help .help__cards .help__adopt .help__adopt--desc, section.help .help__cards .help__adopt .help__donate--desc, section.help .help__cards .help__donate .help__adopt--desc, section.help .help__cards .help__donate .help__donate--desc {
+    font-size: 1.25rem;
+    width: 80%;
+  }
 }
-@media screen and (min-width: 954px) {
+@media screen and (min-width: 941px) {
   section.hero .hero__left .hero__header span::after {
     top: 4.9rem;
     left: 7.5rem;
@@ -402,6 +514,34 @@ section.hero .hero__right .hero__image--img {
     width: 100%;
   }
   section.hero .hero__left .hero__buttons .hero__ctaPrimary, section.hero .hero__left .hero__buttons .hero__ctaSecondary {
+    font-size: 1.5rem;
+  }
+  section.help .help__header {
+    font-size: 5rem;
+    margin-bottom: 6rem;
+  }
+  section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
+    width: 100%;
+  }
+  section.help .help__cards .help__adopt .help__adopt--header, section.help .help__cards .help__adopt .help__donate--header, section.help .help__cards .help__donate .help__adopt--header, section.help .help__cards .help__donate .help__donate--header {
+    font-size: 3rem;
+  }
+  section.help .help__cards .help__adopt .help__adopt--header span::after, section.help .help__cards .help__adopt .help__donate--header span::after, section.help .help__cards .help__donate .help__adopt--header span::after, section.help .help__cards .help__donate .help__donate--header span::after {
+    height: 16px;
+    width: 150px;
+    top: 2.7rem;
+  }
+  section.help .help__cards .help__adopt .help__donate--header span::after, section.help .help__cards .help__donate .help__donate--header span::after {
+    width: 180px;
+  }
+  section.help .help__cards .help__adopt .help__adopt--desc, section.help .help__cards .help__adopt .help__donate--desc, section.help .help__cards .help__donate .help__adopt--desc, section.help .help__cards .help__donate .help__donate--desc {
+    font-size: 2rem;
+    width: 90%;
+  }
+  section.help .help__cards .help__adopt .help__adopt--buttons .help__iconLight, section.help .help__cards .help__adopt .help__adopt--buttons .help__iconDark, section.help .help__cards .help__adopt .help__donate--buttons .help__iconLight, section.help .help__cards .help__adopt .help__donate--buttons .help__iconDark, section.help .help__cards .help__donate .help__adopt--buttons .help__iconLight, section.help .help__cards .help__donate .help__adopt--buttons .help__iconDark, section.help .help__cards .help__donate .help__donate--buttons .help__iconLight, section.help .help__cards .help__donate .help__donate--buttons .help__iconDark {
+    width: 6.25rem;
+  }
+  section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary {
     font-size: 1.5rem;
   }
 }

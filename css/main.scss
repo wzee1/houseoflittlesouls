@@ -90,7 +90,7 @@ body {
 
 body.dark-theme {
    --bgColor: #00121f;
-   --navColor: #DDF1FF;
+   --navColor: #9ed6ff;
    --primaryColor: #81CAFF;
    --primaryColorDark: #1ca0ff;
    --titleColor: white;
@@ -142,6 +142,20 @@ body.dark-theme {
 
          .hero__image--imgDark {
             display: unset;
+         }
+      }
+   }
+
+   section.help {
+      .help__cards {
+         .help__adopt, .help__donate {
+            .help__iconDark {
+               display: unset;
+            }
+
+            .help__iconLight {
+               display: none;
+            }
          }
       }
    }
@@ -390,6 +404,94 @@ section.hero {
    }
 }
 
+// ------------
+// ------------
+// Help Section
+// ------------
+// ------------
+
+section.help {
+   margin-top: 10rem;
+
+   .help__header {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+
+      span {
+         color: var(--primaryColor);
+      }
+   }
+
+   .help__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      .help__adopt, .help__donate {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+
+         .help__adopt--header, .help__donate--header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+         }
+
+         .help__adopt--header span::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primaryColor);
+            width: 60px;
+            height: 10px;
+            top: .95rem;
+            left: 0;
+            z-index: -1
+         }
+
+         .help__donate--header span::after {
+            content: '';
+            position: absolute;
+            background-color: var(--primaryColor);
+            width: 70px;
+            height: 10px;
+            top: .95rem;
+            left: 0;
+            z-index: -1
+         }
+
+         .help__adopt--desc, .help__donate--desc {
+            width: 50%;
+            font-size: .813rem;
+            color: var(--textColor);
+            margin-bottom: 1.25rem;
+         }
+
+         .help__adopt--buttons, .help__donate--buttons {
+            display: flex;
+
+            .help__iconDark {
+               display: none;
+               margin-right: 1.5rem;
+            }
+
+            .help__iconLight {
+               width: 3.125rem;
+               height: auto;
+               margin-right: 1.5rem;
+            }
+
+            .help__ctaPrimary a {
+               color: white;
+            }
+         }
+      }
+   }
+}
+
 // -------------
 // -------------
 // Media Queries
@@ -403,6 +505,22 @@ section.hero {
             span::after {
                top: 9rem;
                left: 0;
+            }
+         }
+      }
+   }
+
+   section.help {
+      .help__cards {
+         .help__adopt, .help__donate {
+            .help__adopt--desc, .help__donate--desc {
+               width: 90%;
+            }
+
+            .help__adopt--buttons, .help__donate--buttons {
+               .help__ctaPrimary a {
+                  font-size: .9rem;
+               }
             }
          }
       }
@@ -435,6 +553,24 @@ section.hero {
          }
       }
    }
+
+   section.help {
+      .help__cards {
+         flex-direction: row;
+         justify-content: center;
+         gap: 2rem;
+         
+         .help__adopt, .help__donate { width: 50% }
+      }
+   }
+}
+
+@media screen and (min-width: 800px) {
+   section.help {
+      .help__cards {
+         .help__adopt, .help__donate { width: 40%; }
+      }
+   }
 }
 
 @media screen and (min-width: 895px) {
@@ -458,9 +594,35 @@ section.hero {
          }
       }
    }
+
+   section.help {
+      .help__header { font-size: 3rem; }
+      
+      .help__cards {
+         .help__adopt, .help__donate {
+            .help__adopt--header, .help__donate--header {
+               font-size: 1.75rem;
+
+               & span::after {
+                  top: 1.5rem;
+                  width: 85px;
+               }
+            }
+
+            .help__donate--header span::after {
+                  width: 100px;
+            }
+
+            .help__adopt--desc, .help__donate--desc {
+               font-size: 1.25rem;
+               width: 80%;
+            }
+         }
+      }
+   }
 }
 
-@media screen and (min-width: 954px) {
+@media screen and (min-width: 941px) {
    section.hero {
       .hero__left {
          .hero__header {
@@ -550,6 +712,46 @@ section.hero {
          .hero__buttons {
             .hero__ctaPrimary, .hero__ctaSecondary {
                font-size: 1.5rem;
+            }
+         }
+      }
+   }
+
+   section.help {
+      .help__header {
+         font-size: 5rem;
+         margin-bottom: 6rem;
+      }
+
+      .help__cards {
+         .help__adopt, .help__donate {
+            width: 100%;
+
+            .help__adopt--header, .help__donate--header {
+               font-size: 3rem;
+
+               & span::after {
+                  height: 16px;
+                  width: 150px;
+                  top: 2.7rem;
+               }
+            }
+
+            .help__donate--header span::after { width: 180px; }
+
+            .help__adopt--desc, .help__donate--desc {
+               font-size: 2rem;
+               width: 90%;
+            }
+
+            .help__adopt--buttons, .help__donate--buttons {
+               .help__iconLight, .help__iconDark {
+                  width: 6.25rem;
+               }
+
+               .help__ctaPrimary {
+                  font-size: 1.5rem;
+               }
             }
          }
       }
