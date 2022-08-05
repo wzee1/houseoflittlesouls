@@ -4,29 +4,97 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <link rel="stylesheet" href="./css/main.css">
+   <link rel="icon" type="image/x-icon" href="./assets/logo1.png">
+   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+   <script src="https://unpkg.com/scrollreveal"></script>
+   <title>House of Little Souls</title>
 </head>
 <body>
-   <style>
-      h1 {
-         display: grid;
-         place-items: center;
-         font-size: 5rem;
-         position: relative;
-      }
-   
-      h1::after {
-         content: '';
-         background-color: rgb(0, 92, 92);
-         position: absolute;
-         height: 1.75rem;
-         width: 22rem;
-         top: 3.5rem;
-         z-index: -1;
-      }
-   </style>
-   
-   <h1>Superhero</h1>
+
+   <header id="header">
+      <div class="nav__content">
+         <div class="nav__notExtended" id="navNotExtended">
+            <a href="#home"><img src="./assets/logo.png" class="nav__logo" id="logo"></a>
+            <img src="./assets/hamburger.svg" alt="Menu Navigation" class="nav__hamburger" id="hamburger">
+         </div>
+         <nav id="menu">
+            <ul class="nav__menu">
+               <div class="nav__menu--center">
+                  <li class="nav__links"><a href="#">Breeds</a></li>
+                  <li class="nav__links"><a href="#">Testimonials</a></li>
+                  <li class="nav__links"><a href="#">About Us</a></li>
+               </div>
+               <div class="nav__menu--right">
+                  <li class="nav__links"><i class='bx bxs-moon bx-sm change-theme' id="theme-button"></i></li>
+                  <button class="nav__ctaPrimary button">Sign In</button>
+                  <button class="nav__ctaSecondary button">Log In</button>
+               </div>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <section class="hero container">
+      <div class="hero__left">
+         <h1 class="hero__header">
+            How Can You Be a<br>Real <span>Superhero?</span>
+         </h1>
+         <p class="hero__desc">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+         </p>
+         <div class="hero__buttons">
+            <button class="hero__ctaPrimary button">
+               <a href="#">Ways to Help</a></button>
+            <button class="hero__ctaSecondary button">
+               <a href="#">Our Blog</a></button>
+         </div>
+      </div>
+      <div class="hero__right">
+         <img src="./assets/searchbarlight.png" alt="Search Bar Shaped Like a Dog Silhouette" class="hero__image--imgLight">
+         <img src="./assets/searchbardark.png" alt="Search Bar Shaped Like a Dog Silhouette" class="hero__image--imgDark">
+      </div>
+   </section>
+
+   <section class="help container">
+      <h1 class="help__header">Ways to Help<span>.</span></h1>
+      <div class="help__cards">
+         <div class="help__adopt">
+            <h2 class="help__adopt--header">
+               <span>Adopt</span> to Save Souls
+            </h2>
+            <p class="help__adopt--desc">
+               Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+            </p>
+            <div class="help__adopt--buttons">
+               <img src="./assets/helpblack.svg" class="help__iconLight">
+               <img src="./assets/helpwhite.svg" class="help__iconDark">
+               <button class="hero__ctaPrimary button">
+                  <a href="#">Adopt Dogs</a></button>
+            </div>
+         </div>
+
+         <div class="help__donate">
+            <h2 class="help__donate--header">
+               <span>Donate</span> to Save Souls
+            </h2>
+            <p class="help__donate--desc">
+               Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+            </p>
+            <div class="help__donate--buttons">
+               <img src="./assets/helpblack.svg" class="help__iconLight">
+               <img src="./assets/helpwhite.svg" class="help__iconDark">
+               <button class="hero__ctaPrimary button">
+                  <a href="#">Donate Dogs</a></button>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script src="./js/main.js"></script>
+
 </body>
 </html>
+
+
 
