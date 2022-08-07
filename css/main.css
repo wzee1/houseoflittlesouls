@@ -53,7 +53,7 @@ input, button, textarea, select {
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding: 8rem;
+  scroll-padding: 15rem;
   background-color: white;
   color: black;
   font-family: "Poppins", "sans-serif";
@@ -99,6 +99,9 @@ body.dark-theme header nav .nav__menu .nav__menu--right .nav__links i {
 }
 body.dark-theme section.hero .hero__left .hero__header span::after {
   background-color: var(--primaryColorDark);
+}
+body.dark-theme section.hero .hero__left .hero__buttons .hero__ctaSecondary {
+  color: white;
 }
 body.dark-theme section.hero .hero__right .hero__image--imgLight {
   display: none;
@@ -246,11 +249,23 @@ header .nav__content nav .nav__menu .nav__menu--right {
 header .nav__content nav .nav__menu .nav__menu--right .nav__links i {
   transform: translateY(20%);
 }
+header .nav__content nav .nav__menu .nav__menu--right .nav__ctaPrimary {
+  transition: 0.3s background-color, 0.3s color;
+}
+header .nav__content nav .nav__menu .nav__menu--right .nav__ctaPrimary:hover {
+  background-color: var(--primaryColor);
+  color: black;
+}
 header .nav__content nav .nav__menu .nav__menu--right .nav__ctaSecondary {
   background-color: transparent;
   color: black;
   outline: 3px solid var(--primaryColorDark);
   outline-offset: -3px;
+  transition: 0.3s background-color, 0.3s color;
+}
+header .nav__content nav .nav__menu .nav__menu--right .nav__ctaSecondary:hover {
+  background-color: var(--primaryColorDark);
+  color: white;
 }
 
 section.hero {
@@ -291,13 +306,23 @@ section.hero .hero__left .hero__buttons {
   width: fit-content;
   font-size: 0.75rem;
 }
-section.hero .hero__left .hero__buttons .hero__ctaPrimary a {
-  color: white;
+section.hero .hero__left .hero__buttons .hero__ctaPrimary {
+  transition: 0.3s background-color, 0.3s color;
+}
+section.hero .hero__left .hero__buttons .hero__ctaPrimary:hover {
+  background-color: var(--primaryColor);
+  color: black;
 }
 section.hero .hero__left .hero__buttons .hero__ctaSecondary {
+  color: black;
   background-color: transparent;
   outline: 3px solid var(--primaryColorDark);
   outline-offset: -3px;
+  transition: 0.3s background-color, 0.3s color;
+}
+section.hero .hero__left .hero__buttons .hero__ctaSecondary:hover {
+  background-color: var(--primaryColorDark);
+  color: white;
 }
 section.hero .hero__right .hero__image--img {
   max-width: 80%;
@@ -314,7 +339,7 @@ section.help .help__header {
   margin-bottom: 3rem;
 }
 section.help .help__header span {
-  color: var(--primaryColor);
+  color: var(--primaryColorDark);
 }
 section.help .help__cards {
   display: flex;
@@ -363,6 +388,7 @@ section.help .help__cards .help__adopt .help__adopt--buttons, section.help .help
   display: flex;
 }
 section.help .help__cards .help__adopt .help__adopt--buttons .help__iconDark, section.help .help__cards .help__adopt .help__donate--buttons .help__iconDark, section.help .help__cards .help__donate .help__adopt--buttons .help__iconDark, section.help .help__cards .help__donate .help__donate--buttons .help__iconDark {
+  width: 3.125rem;
   display: none;
   margin-right: 1.5rem;
 }
@@ -371,20 +397,172 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__iconLight, s
   height: auto;
   margin-right: 1.5rem;
 }
-section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary a {
+section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary {
+  display: flex;
+  align-items: center;
   color: white;
+  transition: 0.3s background-color, 0.3s color;
+}
+section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary:hover, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary:hover, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary:hover, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary:hover {
+  background-color: var(--primaryColor);
+  color: black;
+}
+
+section.about {
+  margin-bottom: 0;
+  padding-bottom: 7rem;
+}
+section.about .about__header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+section.about .about__header span {
+  color: var(--primaryColorDark);
+}
+section.about .about__cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+section.about .about__cards .about__contact {
+  margin-bottom: 2rem;
+}
+section.about .about__cards .about__contact .about__contact--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+section.about .about__cards .about__contact p {
+  font-size: 0.813rem;
+}
+section.about .about__cards .about__social {
+  margin-bottom: 2rem;
+}
+section.about .about__cards .about__social .about__social--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+section.about .about__cards .about__social i {
+  margin-right: 1.25rem;
+}
+section.about .about__cards .about__policy {
+  margin-bottom: 2rem;
+}
+section.about .about__cards .about__policy .about__policy--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+section.about .about__cards .about__policy .about__policy--flex {
+  display: flex;
+  gap: 3rem;
+}
+section.about .about__cards .about__policy .about__policy--flex .about__policy--support li, section.about .about__cards .about__policy .about__policy--flex .about__policy--policy li {
+  font-size: 0.813rem;
+}
+section.about .about__cards .about__team {
+  margin-bottom: 2rem;
+}
+section.about .about__cards .about__team .about__team--header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+section.about .about__cards .about__team .about__team--header span {
+  color: var(--primaryColorDark);
+}
+section.about .about__cards .about__team .about__team--cta {
+  transition: 0.3s background-color, 0.3s color;
+}
+section.about .about__cards .about__team .about__team--cta:hover {
+  background-color: var(--primaryColor);
+  color: black;
 }
 
 @media screen and (max-width: 330px) {
+  section.hero {
+    margin-top: 1.5rem;
+    gap: 2rem;
+  }
+  section.hero .hero__left .hero__header {
+    margin-bottom: 1.5rem;
+  }
   section.hero .hero__left .hero__header span::after {
     top: 9rem;
     left: 0;
   }
+  section.hero .hero__left .hero__desc {
+    width: 85%;
+    margin-bottom: 1.2rem;
+  }
+  section.hero .hero__left .hero__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  section.help {
+    margin-top: 3rem;
+  }
+  section.help .help__cards {
+    gap: 2.5rem;
+  }
+  section.help .help__cards .help__header {
+    margin-bottom: 1.5rem;
+  }
+  section.help .help__cards .help__adopt .help__adopt--header, section.help .help__cards .help__adopt .help__donate--header, section.help .help__cards .help__donate .help__adopt--header, section.help .help__cards .help__donate .help__donate--header {
+    margin-bottom: 1rem;
+  }
   section.help .help__cards .help__adopt .help__adopt--desc, section.help .help__cards .help__adopt .help__donate--desc, section.help .help__cards .help__donate .help__adopt--desc, section.help .help__cards .help__donate .help__donate--desc {
     width: 90%;
+    margin-bottom: 1rem;
   }
   section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary a, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary a {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  section.about .about__header {
+    margin-bottom: 1.5rem;
+  }
+  section.about .about__cards .about__contact {
+    margin-bottom: 1.25rem;
+  }
+  section.about .about__cards .about__contact .about__contact--header {
+    margin-bottom: 0.85rem;
+  }
+  section.about .about__cards .about__contact p {
+    font-size: 0.75rem;
+  }
+  section.about .about__cards .about__social {
+    margin-bottom: 1.25rem;
+  }
+  section.about .about__cards .about__social .about__social--header {
+    margin-bottom: 0.85rem;
+  }
+  section.about .about__cards .about__social i {
+    margin-right: 0.9rem;
+  }
+  section.about .about__cards .about__policy {
+    margin-bottom: 1.25rem;
+  }
+  section.about .about__cards .about__policy .about__policy--header {
+    margin-bottom: 0.85rem;
+  }
+  section.about .about__cards .about__policy .about__policy--flex {
+    gap: 1.5rem;
+  }
+  section.about .about__cards .about__policy .about__policy--flex .about__policy--support li,
+section.about .about__cards .about__policy .about__policy--flex .about__policy--policy li {
+    font-size: 0.75rem;
+  }
+  section.about .about__cards .about__team {
+    display: flex;
+  }
+  section.about .about__cards .about__team .about__team--cta {
+    font-size: 0.75rem;
+    padding-inline: 1rem;
+    border-radius: 1.5rem;
+    transform: translateY(-8px);
   }
 }
 @media screen and (min-width: 331px) and (max-width: 356px) {
@@ -410,6 +588,10 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a
   }
   section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
     width: 50%;
+  }
+  section.about .about__cards {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
   }
 }
 @media screen and (min-width: 800px) {
@@ -448,6 +630,30 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a
   section.help .help__cards .help__adopt .help__adopt--desc, section.help .help__cards .help__adopt .help__donate--desc, section.help .help__cards .help__donate .help__adopt--desc, section.help .help__cards .help__donate .help__donate--desc {
     font-size: 1.25rem;
     width: 80%;
+  }
+  section.about .about__header {
+    font-size: 3rem;
+  }
+  section.about .about__cards .about__contact .about__contact--header {
+    font-size: 1.75rem;
+  }
+  section.about .about__cards .about__contact p {
+    font-size: 1rem;
+  }
+  section.about .about__cards .about__social .about__social--header {
+    font-size: 1.75rem;
+  }
+  section.about .about__cards .about__social i {
+    margin-right: 2rem;
+  }
+  section.about .about__cards .about__policy .about__policy--header {
+    font-size: 1.75rem;
+  }
+  section.about .about__cards .about__policy .about__policy--flex .about__policy--support li, section.about .about__cards .about__policy .about__policy--flex .about__policy--policy li {
+    font-size: 1rem;
+  }
+  section.about .about__cards .about__team .about__team--header {
+    font-size: 1.75rem;
   }
 }
 @media screen and (min-width: 941px) {
@@ -499,6 +705,9 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a
   header .nav__content nav .nav__menu .nav__menu--right .nav__ctaPrimary, header .nav__content nav .nav__menu .nav__menu--right .nav__ctaSecondary {
     font-size: 1.5rem;
   }
+  section.hero {
+    margin-bottom: 21rem;
+  }
   section.hero .hero__left .hero__header {
     font-size: 5rem;
     line-height: 100px;
@@ -515,6 +724,9 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a
   }
   section.hero .hero__left .hero__buttons .hero__ctaPrimary, section.hero .hero__left .hero__buttons .hero__ctaSecondary {
     font-size: 1.5rem;
+  }
+  section.help {
+    margin-bottom: 21rem;
   }
   section.help .help__header {
     font-size: 5rem;
@@ -543,6 +755,46 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary a
   }
   section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary {
     font-size: 1.5rem;
+  }
+  section.about .about__header {
+    font-size: 5rem;
+    margin-bottom: 6rem;
+  }
+  section.about .about__cards {
+    justify-items: unset;
+  }
+  section.about .about__cards .about__contact {
+    margin-bottom: 4rem;
+  }
+  section.about .about__cards .about__contact .about__contact--header {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  section.about .about__cards .about__contact p {
+    font-size: 2rem;
+  }
+  section.about .about__cards .about__social .about__social--header {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  section.about .about__cards .about__social i {
+    margin-left: 0.5rem;
+    margin-right: 5rem;
+    transform: scale(1.75);
+  }
+  section.about .about__cards .about__policy .about__policy--header {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  section.about .about__cards .about__policy .about__policy--flex .about__policy--support li, section.about .about__cards .about__policy .about__policy--flex .about__policy--policy li {
+    font-size: 2rem;
+  }
+  section.about .about__cards .about__team .about__team--header {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  section.about .about__cards .about__team .about__team--cta {
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 1402px) {

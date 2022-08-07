@@ -23,7 +23,7 @@
                <div class="nav__menu--center">
                   <li class="nav__links"><a href="#">Breeds</a></li>
                   <li class="nav__links"><a href="#">Testimonials</a></li>
-                  <li class="nav__links"><a href="#">About Us</a></li>
+                  <li class="nav__links"><a href="#about">About Us</a></li>
                </div>
                <div class="nav__menu--right">
                   <li class="nav__links"><i class='bx bxs-moon bx-sm change-theme' id="theme-button"></i></li>
@@ -44,10 +44,10 @@
             Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
          </p>
          <div class="hero__buttons">
-            <button class="hero__ctaPrimary button">
-               <a href="#">Ways to Help</a></button>
-            <button class="hero__ctaSecondary button">
-               <a href="#">Our Blog</a></button>
+            <a href="#help" class="hero__ctaPrimary button">
+               Ways to Help</a>
+            <a href="#"  class="hero__ctaSecondary button">
+               Our Blog</a>
          </div>
       </div>
       <div class="hero__right">
@@ -56,7 +56,7 @@
       </div>
    </section>
 
-   <section class="help container">
+   <section class="help container" id="help">
       <h1 class="help__header">Ways to Help<span>.</span></h1>
       <div class="help__cards">
          <div class="help__adopt">
@@ -69,8 +69,8 @@
             <div class="help__adopt--buttons">
                <img src="./assets/helpblack.svg" class="help__iconLight">
                <img src="./assets/helpwhite.svg" class="help__iconDark">
-               <button class="help__ctaPrimary button">
-                  <a href="#">Adopt Dogs</a></button>
+               <a href="#" class="help__ctaPrimary button">
+                  Adopt Dogs</a>
             </div>
          </div>
 
@@ -84,9 +84,51 @@
             <div class="help__donate--buttons">
                <img src="./assets/helpblack.svg" class="help__iconLight">
                <img src="./assets/helpwhite.svg" class="help__iconDark">
-               <button class="help__ctaPrimary button">
-                  <a href="#">Donate to Dogs</a></button>
+               <a href="#" class="help__ctaPrimary button">
+                  Donate to Dogs</a>
             </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="about container" id="about">
+      <h1 class="about__header">About Us<span>.</span></h1>
+      <div class="about__cards">
+         <div class="about__contact">
+            <h2 class="about__contact--header">Contact Us</h2>
+            <p><b>Telephone:</b> 0670-123-4567</p>
+            <p><b>Email:</b> contact@houseoflittlesouls.com</p>
+            <p><b>Headquarters:</b><br>10250 Santa Monica Blvd #2603</p>
+         </div>
+
+         <div class="about__social">
+            <h2 class="about__social--header">Social Media Accounts</h2>
+            
+            <a href="https://www.instagram.com"><i class='bx bxl-instagram bx-md'></i></a>
+            <a href="https://www.facebook.com"><i class='bx bxl-facebook-circle bx-md'></i></a>
+            <a href="https://www.tiktok.com"><i class='bx bxl-tiktok bx-md '></i></a>
+            <a href="https://www.twitter.com"><i class='bx bxl-twitter bx-md'></i></a>
+         </div>
+
+         <div class="about__policy">
+            <h2 class="about__policy--header">Support & Policies</h2>
+            <div class="about__policy--flex">
+               <ul class="about__policy--support">
+                  <li><b>Frequently</b> Asked<br>Questions</li>
+                  <li><b>Support</b> Center</li>
+               </ul>
+   
+               <ul class="about__policy--policy">
+                  <li><b>Privacy Policy</b></li>
+                  <li><b>Terms</b> and<br> <b>Conditions</b></li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="about__team">
+            <h2 class="about__team--header">
+               Get To Know <b>Our Team</b><span>.</span></h2>
+            <a href="" class="about__team--cta button">Our Team</a>
          </div>
       </div>
    </section>

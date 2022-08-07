@@ -62,7 +62,7 @@ input, button, textarea, select {
 
 html {
    scroll-behavior: smooth;
-   scroll-padding: 8rem;
+   scroll-padding: 15rem;
    background-color: white;
    color: black;
    font-family: "Poppins", "sans-serif";
@@ -131,6 +131,12 @@ body.dark-theme {
          .hero__header {
             span::after {
                background-color: var(--primaryColorDark);
+            }
+         }
+
+         .hero__buttons {
+            .hero__ctaSecondary {
+               color: white;
             }
          }
       }
@@ -325,11 +331,27 @@ header {
                   transform: translateY(20%);
                }
 
+               .nav__ctaPrimary {
+                  transition: .3s background-color,
+                              .3s color;
+                  &:hover {
+                     background-color: var(--primaryColor);
+                     color: black;
+                  }
+               }
+
                .nav__ctaSecondary {
                   background-color: transparent;
                   color: black;
                   outline: 3px solid var(--primaryColorDark);
                   outline-offset: -3px;
+                  transition: .3s background-color,
+                              .3s color;
+
+                  &:hover {
+                     background-color: var(--primaryColorDark);
+                     color: white;
+                  }
                }
             }
          }
@@ -383,14 +405,28 @@ section.hero {
          width: fit-content;
          font-size: .75rem;
 
-         .hero__ctaPrimary a {
-            color: white;
+         .hero__ctaPrimary {
+            transition: .3s background-color,
+                        .3s color;
+
+            &:hover {
+               background-color: var(--primaryColor);
+               color: black;
+            }
          }
 
          .hero__ctaSecondary {
+            color: black;
             background-color: transparent;
             outline: 3px solid var(--primaryColorDark);
             outline-offset: -3px;
+            transition: .3s background-color,
+                        .3s color;
+
+            &:hover {
+               background-color: var(--primaryColorDark);
+               color: white;
+            }
          }
       }
    }
@@ -419,7 +455,7 @@ section.help {
       margin-bottom: 3rem;
 
       span {
-         color: var(--primaryColor);
+         color: var(--primaryColorDark);
       }
    }
 
@@ -474,6 +510,7 @@ section.help {
             display: flex;
 
             .help__iconDark {
+               width: 3.125rem;
                display: none;
                margin-right: 1.5rem;
             }
@@ -484,8 +521,116 @@ section.help {
                margin-right: 1.5rem;
             }
 
-            .help__ctaPrimary a {
+            .help__ctaPrimary {
+               display: flex;
+               align-items: center;
+
                color: white;
+               transition: .3s background-color,
+                           .3s color;
+
+               &:hover {
+                  background-color: var(--primaryColor);
+                  color: black;
+               }
+            }
+         }
+      }
+   }
+}
+
+// -------------
+// -------------
+// About Section
+// -------------
+// -------------
+
+section.about {
+   margin-bottom: 0;
+   padding-bottom: 7rem;
+
+   .about__header {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+
+      span {
+         color: var(--primaryColorDark);
+      }
+   }
+
+   .about__cards {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      .about__contact {
+         margin-bottom: 2rem;
+
+         .about__contact--header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+         }
+
+         p {
+            font-size: .813rem;
+         }
+      }
+
+      .about__social {
+         margin-bottom: 2rem;
+
+         .about__social--header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+         }
+
+         i {
+            margin-right: 1.25rem;
+         }
+      }
+
+      .about__policy {
+         margin-bottom: 2rem;
+
+         .about__policy--header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+         }
+
+         .about__policy--flex {
+            display: flex;
+            gap: 3rem;
+
+            .about__policy--support li, .about__policy--policy li{
+               font-size: .813rem;
+            }
+         }
+
+      }
+
+      .about__team {
+         margin-bottom: 2rem;
+
+         .about__team--header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+
+            span {
+               color: var(--primaryColorDark);
+            }
+         }
+
+         .about__team--cta {
+            transition: .3s background-color,
+                        .3s color;
+
+            &:hover {
+               background-color: var(--primaryColor);
+               color: black;
             }
          }
       }
@@ -500,27 +645,113 @@ section.help {
 
 @media screen and (max-width: 330px) { // Galaxy Fold
    section.hero {
+      margin-top: 1.5rem;
+      gap: 2rem;
+
       .hero__left {
          .hero__header {
+            margin-bottom: 1.5rem;
+
             span::after {
                top: 9rem;
                left: 0;
             }
          }
+
+         .hero__desc {
+            width: 85%;
+            margin-bottom: 1.2rem;
+         }
+
+         .hero__buttons {
+            display: flex;
+            flex-direction: column;
+         }
       }
    }
 
    section.help {
+      margin-top: 3rem;
+
       .help__cards {
+         gap: 2.5rem;
+
+         .help__header {
+            margin-bottom: 1.5rem;
+         }
+
          .help__adopt, .help__donate {
+            .help__adopt--header, .help__donate--header {
+               margin-bottom: 1rem;
+            }
+
             .help__adopt--desc, .help__donate--desc {
                width: 90%;
+               margin-bottom: 1rem;
             }
 
             .help__adopt--buttons, .help__donate--buttons {
                .help__ctaPrimary a {
-                  font-size: .9rem;
+                  font-size: .75rem;
+                  display: flex;
+                  align-items: center;
                }
+            }
+         }
+      }
+   }
+
+   section.about {
+      .about__header {
+         margin-bottom: 1.5rem;
+      }
+
+      .about__cards {
+         .about__contact {
+            margin-bottom: 1.25rem;
+
+            .about__contact--header {
+               margin-bottom: .85rem;
+            }
+
+            p { font-size: .75rem; }
+         }
+         
+         .about__social {
+            margin-bottom: 1.25rem;
+
+            .about__social--header {
+               margin-bottom: .85rem;
+            }
+
+            i {
+               margin-right: .9rem;
+            }
+         }
+   
+         .about__policy {
+            margin-bottom: 1.25rem;
+
+            .about__policy--header {
+               margin-bottom: .85rem;
+            }
+
+            .about__policy--flex {
+               gap: 1.5rem;
+
+               .about__policy--support li,
+               .about__policy--policy li { font-size: .75rem; }
+            }
+         }
+
+         .about__team {
+            display: flex;
+
+            .about__team--cta {
+               font-size: .75rem;
+               padding-inline: 1rem;
+               border-radius: 1.5rem;
+               transform: translateY(-8px);
             }
          }
       }
@@ -561,6 +792,13 @@ section.help {
          gap: 2rem;
          
          .help__adopt, .help__donate { width: 50% }
+      }
+   }
+
+   section.about {
+      .about__cards {
+         grid-template-columns: repeat(2, 1fr);
+         justify-items: center;
       }
    }
 }
@@ -616,6 +854,52 @@ section.help {
             .help__adopt--desc, .help__donate--desc {
                font-size: 1.25rem;
                width: 80%;
+            }
+         }
+      }
+   }
+
+   section.about {
+      .about__header {
+         font-size: 3rem;
+      }
+
+      .about__cards {
+         .about__contact {
+            .about__contact--header {
+               font-size: 1.75rem;
+            }
+
+            p {
+               font-size: 1rem;
+            }
+         }
+
+         .about__social {
+            .about__social--header {
+               font-size: 1.75rem;
+            }
+
+            i {
+               margin-right: 2rem;
+            }
+         }
+
+         .about__policy {
+            .about__policy--header {
+               font-size: 1.75rem;
+            }
+
+            .about__policy--flex {
+               .about__policy--support li, .about__policy--policy li{
+                  font-size: 1rem;
+               }
+            }
+         }
+
+         .about__team {
+            .about__team--header {
+               font-size: 1.75rem;
             }
          }
       }
@@ -691,6 +975,8 @@ section.help {
    }
 
    section.hero {
+      margin-bottom: 21rem;
+
       .hero__left {
          .hero__header {
             font-size: 5rem;
@@ -718,6 +1004,8 @@ section.help {
    }
 
    section.help {
+      margin-bottom: 21rem;
+
       .help__header {
          font-size: 5rem;
          margin-bottom: 6rem;
@@ -752,6 +1040,67 @@ section.help {
                .help__ctaPrimary {
                   font-size: 1.5rem;
                }
+            }
+         }
+      }
+   }
+
+   section.about {
+      .about__header {
+         font-size: 5rem;
+         margin-bottom: 6rem;
+      }
+
+      .about__cards {
+         justify-items: unset;
+
+         .about__contact {
+            margin-bottom: 4rem;
+
+            .about__contact--header {
+               font-size: 3rem;
+               margin-bottom: 2.5rem;
+            }
+
+            p {
+               font-size: 2rem;
+            }
+         }
+
+         .about__social {
+            .about__social--header {
+               font-size: 3rem;
+               margin-bottom: 2.5rem;
+            }
+
+            i {
+               margin-left: .5rem;
+               margin-right: 5rem;
+               transform: scale(1.75);
+            }
+         }
+
+         .about__policy {
+            .about__policy--header {
+               font-size: 3rem;
+               margin-bottom: 2.5rem;
+            }
+
+            .about__policy--flex {
+               .about__policy--support li, .about__policy--policy li{
+                  font-size: 2rem;
+               }
+            }
+         }
+
+         .about__team {
+            .about__team--header {
+               font-size: 3rem;
+               margin-bottom: 2.5rem;
+            }
+
+            .about__team--cta {
+               font-size: 2rem;
             }
          }
       }
