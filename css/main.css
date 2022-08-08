@@ -53,7 +53,7 @@ input, button, textarea, select {
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding: 15rem;
+  scroll-padding: 8rem;
   background-color: white;
   color: black;
   font-family: "Poppins", "sans-serif";
@@ -65,6 +65,7 @@ html {
   --navColor: #DDF1FF;
   --primaryColor: #81CAFF;
   --primaryColorDark: #1ca0ff;
+  --testimonialBgColor: #E6F4FF;
   --titleColor: black;
   --textColor: #252525;
 }
@@ -78,6 +79,7 @@ body.dark-theme {
   --navColor: #9ed6ff;
   --primaryColor: #81CAFF;
   --primaryColorDark: #1ca0ff;
+  --testimonialBgColor: #1ca0ff;
   --titleColor: white;
   --textColor: #e7e7e7;
   background-color: var(--bgColor);
@@ -408,6 +410,51 @@ section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary:h
   color: black;
 }
 
+section.testimonial {
+  margin-bottom: -5rem;
+}
+section.testimonial .testimonial__header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+section.testimonial .testimonial__header span {
+  color: var(--primaryColorDark);
+}
+section.testimonial .swiper {
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 300px;
+}
+section.testimonial .swiper .swiper-wrapper .swiper-slide {
+  background-color: var(--testimonialBgColor);
+  border-radius: 2rem;
+  padding: 1.5rem;
+}
+section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--img {
+  height: 50px;
+  width: 50px;
+}
+section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--name {
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+}
+section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__desc {
+  font-size: 0.813rem;
+  font-weight: 500;
+  text-align: center;
+}
+section.testimonial .swiper .swiper-button-prev, section.testimonial .swiper .swiper-button-next {
+  transform: translateY(3.5rem);
+}
+
 section.about {
   margin-bottom: 0;
   padding-bottom: 7rem;
@@ -565,10 +612,9 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
     transform: translateY(-8px);
   }
 }
-@media screen and (min-width: 331px) and (max-width: 356px) {
-  section.hero .hero__left .hero__header span::after {
-    top: 6.5rem;
-    left: 5rem;
+@media screen and (max-width: 360px) {
+  section.testimonial .swiper .swiper-button-prev, section.testimonial .swiper .swiper-button-next {
+    transform: translateY(5rem);
   }
 }
 @media screen and (min-width: 667px) {
@@ -589,14 +635,33 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
   section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
     width: 50%;
   }
+  section.testimonial {
+    margin-bottom: -2rem;
+  }
+  section.testimonial .swiper {
+    max-width: 300px;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header {
+    justify-content: flex-start;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--img {
+    height: 75px;
+    width: 75px;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--name {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__desc {
+    font-size: 1rem;
+    text-align: left;
+  }
+  section.testimonial .swiper .swiper-button-prev, section.testimonial .swiper .swiper-button-next {
+    transform: translateY(6rem);
+  }
   section.about .about__cards {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-  }
-}
-@media screen and (min-width: 800px) {
-  section.help .help__cards .help__adopt, section.help .help__cards .help__donate {
-    width: 40%;
   }
 }
 @media screen and (min-width: 895px) {
@@ -631,6 +696,34 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
     font-size: 1.25rem;
     width: 80%;
   }
+  section.testimonial {
+    margin-bottom: 0;
+  }
+  section.testimonial .testimonial__header {
+    font-size: 2.5rem;
+  }
+  section.testimonial .swiper {
+    max-width: 300px;
+    padding-bottom: 5rem;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header {
+    justify-content: flex-start;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--img {
+    height: 100px;
+    width: 100px;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--name {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__desc {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  section.testimonial .swiper .swiper-button-prev, section.testimonial .swiper .swiper-button-next {
+    transform: translateY(10rem);
+  }
   section.about .about__header {
     font-size: 3rem;
   }
@@ -654,12 +747,6 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
   }
   section.about .about__cards .about__team .about__team--header {
     font-size: 1.75rem;
-  }
-}
-@media screen and (min-width: 941px) {
-  section.hero .hero__left .hero__header span::after {
-    top: 4.9rem;
-    left: 7.5rem;
   }
 }
 @media screen and (min-width: 1150px) {
@@ -756,6 +843,34 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
   section.help .help__cards .help__adopt .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__adopt .help__donate--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__adopt--buttons .help__ctaPrimary, section.help .help__cards .help__donate .help__donate--buttons .help__ctaPrimary {
     font-size: 1.5rem;
   }
+  section.testimonial .testimonial__header {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+  section.testimonial .swiper {
+    max-width: 600px;
+    padding-bottom: 10rem;
+    margin-top: 4rem;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--img {
+    height: 120px;
+    width: 120px;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__header .swiper__header--name {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+  section.testimonial .swiper .swiper-wrapper .swiper-slide .swiper__desc {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  section.testimonial .swiper .swiper-button-prev, section.testimonial .swiper .swiper-button-next {
+    transform: translateY(6rem);
+  }
   section.about .about__header {
     font-size: 5rem;
     margin-bottom: 6rem;
@@ -797,6 +912,41 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
     font-size: 2rem;
   }
 }
+@media screen and (min-width: 1600px) {
+  header .nav__content nav .nav__menu .nav__menu--center {
+    transform: translateX(-45%);
+  }
+}
+@media screen and (min-width: 331px) and (max-width: 356px) {
+  section.hero .hero__left .hero__header span::after {
+    top: 6.5rem;
+    left: 5rem;
+  }
+}
+@media screen and (width: 331px) {
+  section.hero .hero__left .hero__header span::after {
+    top: 9rem;
+    left: 0;
+  }
+}
+@media screen and (min-width: 941px) {
+  section.hero .hero__left .hero__header span::after {
+    top: 4.9rem;
+    left: 7.5rem;
+  }
+}
+@media screen and (min-width: 941px) and (max-width: 953px) {
+  section.hero .hero__left .hero__header span::after {
+    top: 8rem;
+    left: 7.5rem;
+  }
+}
+@media screen and (min-width: 1150px) {
+  section.hero .hero__left .hero__header span::after {
+    top: 22.5rem;
+    left: 0;
+  }
+}
 @media screen and (min-width: 1402px) {
   section.hero .hero__left .hero__header span::after {
     top: 16.25rem;
@@ -806,11 +956,6 @@ section.about .about__cards .about__policy .about__policy--flex .about__policy--
 @media screen and (min-width: 1539px) {
   section.hero .hero__left .hero__header span::after {
     top: 10rem;
-  }
-}
-@media screen and (min-width: 1600px) {
-  header .nav__content nav .nav__menu .nav__menu--center {
-    transform: translateX(-45%);
   }
 }
 @media screen and (min-width: 2560px) {

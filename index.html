@@ -10,7 +10,7 @@
    <script src="https://unpkg.com/scrollreveal"></script>
    <title>House of Little Souls</title>
 </head>
-<body>
+<body id="home">
 
    <header id="header">
       <div class="nav__content">
@@ -22,7 +22,7 @@
             <ul class="nav__menu">
                <div class="nav__menu--center">
                   <li class="nav__links"><a href="#">Breeds</a></li>
-                  <li class="nav__links"><a href="#">Testimonials</a></li>
+                  <li class="nav__links"><a href="#testimonial">Testimonials</a></li>
                   <li class="nav__links"><a href="#about">About Us</a></li>
                </div>
                <div class="nav__menu--right">
@@ -91,6 +91,47 @@
       </div>
    </section>
 
+   <section class="testimonial container" id="testimonial">
+      <h1 class="testimonial__header">People Who Became<br>Real Life Savers<span>.</span></h1>
+
+      <div class="swiper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <div class="swiper__header">
+                  <img src="./assets/pete.png" alt="" class="swiper__header--img">
+                  <h2 class="swiper__header--name">Pete Peterson</h2>
+               </div>
+               <p class="swiper__desc">
+                  <b>"</b>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.<b>"</b>
+               </p>
+            </div>
+            <div class="swiper-slide">
+               <div class="swiper__header">
+                  <img src="./assets/olivia.png" alt="" class="swiper__header--img">
+                  <h2 class="swiper__header--name">Olivia Smith</h2>
+               </div>
+               <p class="swiper__desc">
+                  <b>"</b>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.<b>"</b>
+               </p>
+            </div>
+            <div class="swiper-slide">
+               <div class="swiper__header">
+                  <img src="./assets/john.png" alt="" class="swiper__header--img">
+                  <h2 class="swiper__header--name">John Johnson</h2>
+               </div>
+               <p class="swiper__desc">
+                  <b>"</b>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.<b>"</b>
+               </p>
+            </div>
+         </div>
+
+         <div class="swiper-button-prev">
+            <i class='bx bx-chevron-left bx-lg'></i></div>
+         <div class="swiper-button-next">
+            <i class='bx bx-chevron-right bx-lg'></i></div>
+      </div>
+   </section>
+
    <section class="about container" id="about">
       <h1 class="about__header">About Us<span>.</span></h1>
       <div class="about__cards">
@@ -133,8 +174,11 @@
       </div>
    </section>
 
+   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+   
    <script src="./js/main.js"></script>
-
 </body>
 </html>
 

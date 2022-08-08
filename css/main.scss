@@ -62,7 +62,7 @@ input, button, textarea, select {
 
 html {
    scroll-behavior: smooth;
-   scroll-padding: 15rem;
+   scroll-padding: 8rem;
    background-color: white;
    color: black;
    font-family: "Poppins", "sans-serif";
@@ -74,6 +74,7 @@ html {
    --navColor: #DDF1FF;
    --primaryColor: #81CAFF;
    --primaryColorDark: #1ca0ff;
+   --testimonialBgColor: #E6F4FF;
    --titleColor: black;
    --textColor: #252525;
 }
@@ -93,6 +94,7 @@ body.dark-theme {
    --navColor: #9ed6ff;
    --primaryColor: #81CAFF;
    --primaryColorDark: #1ca0ff;
+   --testimonialBgColor: #1ca0ff;
    --titleColor: white;
    --textColor: #e7e7e7;
 
@@ -539,6 +541,66 @@ section.help {
    }
 }
 
+// -------------------  
+// -------------------  
+// Testimonial Section
+// -------------------  
+// -------------------  
+
+section.testimonial {
+   margin-bottom: -5rem;
+
+   .testimonial__header {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2.5rem;
+
+      span { color: var(--primaryColorDark); }
+   }
+
+   .swiper {
+      min-width: 200px;
+      max-width: 300px;
+      min-height: 300px;
+
+      .swiper-wrapper {
+         .swiper-slide {
+            background-color: var(--testimonialBgColor);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            
+            .swiper__header {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: .75rem;
+               margin-bottom: 1rem;
+
+               .swiper__header--img {
+                  height: 50px;
+                  width: 50px;
+               }
+
+               .swiper__header--name {
+                  font-size: 1.2rem;
+                  line-height: 1.3rem;
+               }
+            }
+
+            .swiper__desc {
+               font-size: .813rem;
+               font-weight: 500;
+               text-align: center;
+            }
+         }
+      }
+
+      .swiper-button-prev, .swiper-button-next {
+         transform: translateY(3.5rem);
+      }
+   }
+}
+
 // -------------
 // -------------
 // About Section
@@ -758,14 +820,11 @@ section.about {
    }
 }
 
-@media screen and (min-width: 331px) and (max-width: 356px) { // Span
-   section.hero {
-      .hero__left {
-         .hero__header {
-            span::after {
-               top: 6.5rem;
-               left: 5rem;
-            }
+@media screen and (max-width: 360px) { // Testimonial
+   section.testimonial {
+      .swiper {
+         .swiper-button-prev, .swiper-button-next {
+            transform: translateY(5rem);
          }
       }
    }
@@ -795,18 +854,45 @@ section.about {
       }
    }
 
+   section.testimonial {
+      margin-bottom: -2rem;
+
+      .swiper {
+         max-width: 300px;
+
+         .swiper-wrapper {
+            .swiper-slide {
+               .swiper__header {
+                  justify-content: flex-start;
+
+                  .swiper__header--img {
+                     height: 75px;
+                     width: 75px;
+                  }
+   
+                  .swiper__header--name {
+                     font-size: 1.5rem;
+                     line-height: 2rem;
+                  }
+               }
+   
+               .swiper__desc {
+                  font-size: 1rem;
+                  text-align: left;
+               }
+            }
+         }
+   
+         .swiper-button-prev, .swiper-button-next {
+            transform: translateY(6rem);
+         }
+      }
+   }
+
    section.about {
       .about__cards {
          grid-template-columns: repeat(2, 1fr);
          justify-items: center;
-      }
-   }
-}
-
-@media screen and (min-width: 800px) {
-   section.help {
-      .help__cards {
-         .help__adopt, .help__donate { width: 40%; }
       }
    }
 }
@@ -859,6 +945,46 @@ section.about {
       }
    }
 
+   section.testimonial {
+      margin-bottom: 0;
+
+      .testimonial__header {
+         font-size: 2.5rem;
+      }
+
+      .swiper {
+         max-width: 300px;
+         padding-bottom: 5rem;
+
+         .swiper-wrapper {
+            .swiper-slide {
+               .swiper__header {
+                  justify-content: flex-start;
+
+                  .swiper__header--img {
+                     height: 100px;
+                     width: 100px;
+                  }
+   
+                  .swiper__header--name {
+                     font-size: 2rem;
+                     line-height: 2.5rem;
+                  }
+               }
+   
+               .swiper__desc {
+                  font-size: 1.2rem;
+                  text-align: left;
+               }
+            }
+         }
+   
+         .swiper-button-prev, .swiper-button-next {
+            transform: translateY(10rem);
+         }
+      }
+   }
+
    section.about {
       .about__header {
          font-size: 3rem;
@@ -900,19 +1026,6 @@ section.about {
          .about__team {
             .about__team--header {
                font-size: 1.75rem;
-            }
-         }
-      }
-   }
-}
-
-@media screen and (min-width: 941px) {
-   section.hero {
-      .hero__left {
-         .hero__header {
-            span::after {
-               top: 4.9rem;
-               left: 7.5rem;
             }
          }
       }
@@ -1045,6 +1158,47 @@ section.about {
       }
    }
 
+   section.testimonial {
+      .testimonial__header {
+         font-size: 5rem;
+         margin-bottom: 3rem;
+      }
+
+      .swiper {
+         max-width: 600px;
+         padding-bottom: 10rem;
+         margin-top: 4rem;
+
+         .swiper-wrapper {
+            .swiper-slide {
+               .swiper__header {
+                  justify-content: flex-start;
+                  gap: 2rem;
+
+                  .swiper__header--img {
+                     height: 120px;
+                     width: 120px;
+                  }
+   
+                  .swiper__header--name {
+                     font-size: 3rem;
+                     line-height: 2.5rem;
+                  }
+               }
+   
+               .swiper__desc {
+                  font-size: 1.5rem;
+                  text-align: left;
+               }
+            }
+         }
+   
+         .swiper-button-prev, .swiper-button-next {
+            transform: translateY(6rem);
+         }
+      }
+   }
+
    section.about {
       .about__header {
          font-size: 5rem;
@@ -1107,7 +1261,90 @@ section.about {
    }
 }
 
-@media screen and (min-width: 1402px) { // Underline Fix
+@media screen and (min-width: 1600px) { // Nav Center Align
+   header {
+      .nav__content {
+         nav {
+            .nav__menu {
+               .nav__menu--center {
+                  transform: translateX(-45%);
+               }
+            }
+         }
+      }
+   }
+}
+
+// ---------
+// Bug Fixes
+// ---------
+
+@media screen and (min-width: 331px) and (max-width: 356px) { // Hero Underline
+   section.hero {
+      .hero__left {
+         .hero__header {
+            span::after {
+               top: 6.5rem;
+               left: 5rem;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (width: 331px) { // Hero Underline
+   section.hero {
+      .hero__left {
+         .hero__header {
+            span::after {
+               top: 9rem;
+               left: 0;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 941px) { // Hero Underline
+   section.hero {
+      .hero__left {
+         .hero__header {
+            span::after {
+               top: 4.9rem;
+               left: 7.5rem;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 941px) and (max-width: 953px) { // Hero Underline
+   section.hero {
+      .hero__left {
+         .hero__header {
+            span::after {
+               top: 8rem;
+               left: 7.5rem;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1150px) { // Hero Underline
+   section.hero {
+      .hero__left {
+         .hero__header {
+            span::after {
+               top: 22.5rem;
+               left: 0;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 1402px) { // Hero Underline
    section.hero {
       .hero__left {
          .hero__header {
@@ -1120,26 +1357,12 @@ section.about {
    }
 }
 
-@media screen and (min-width: 1539px) { // Underline Fix
+@media screen and (min-width: 1539px) { // Hero Underline
    section.hero {
       .hero__left {
          .hero__header {
             span::after {
                top: 10rem;
-            }
-         }
-      }
-   }
-}
-
-@media screen and (min-width: 1600px) { // Nav Center Align
-   header {
-      .nav__content {
-         nav {
-            .nav__menu {
-               .nav__menu--center {
-                  transform: translateX(-45%);
-               }
             }
          }
       }

@@ -67,6 +67,23 @@ themeButton.addEventListener("click", () => {
    localStorage.setItem('selected-icon', getCurrentIcon());
 })
 
+// ------------------
+// ------------------
+// Testimonial Swiper
+// ------------------
+// ------------------
+
+let testimonialSwiper = new Swiper(".swiper", {
+   direction: "horizontal",
+   spaceBetween: 40,
+   loop: 'true',
+
+   navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+   },
+});
+
 // -------------
 // -------------
 // Scroll Reveal
